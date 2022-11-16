@@ -51,7 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 600,
                 padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
                 image: DecorationImage(
                     image: AssetImage("images/oldtrafford.jpeg"),
                     fit: BoxFit.cover
@@ -131,28 +134,129 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
             SizedBox(height: 30,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                     children :[
+                       Container(
+                         padding: EdgeInsets.all(5),
+                         decoration: BoxDecoration(
 
-                  child: Icon(
-                    Icons.wifi,
-                  ),
-                ),
-                Icon(
-                  Icons.flatware,
-                ),
-                Icon(
-                  Icons.beach_access,
-                ),
-                Icon(
-                  Icons.more_horiz,
-                ),
-              ],
-            )
-          ],
-        ),
+                border: Border.all(color: Colors.grey),
+                     borderRadius: BorderRadius.circular(10),
+
+                           ),
+
+                         child: Icon(
+                           Icons.wifi,
+                         ),
+                       ),
+                          Text('Wifi'),
+
+                            ],
+                            ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(10),
+
+                          ),
+                          child: Icon(
+                            Icons.flatware,
+                          ),
+                        ),
+                        Text('キッチン'),
+                        ],
+                    ),
+
+                        Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+
+                                border: Border.all(color: Colors.grey),
+                                borderRadius: BorderRadius.circular(10),
+
+                              ),
+                              child: Icon(
+                                Icons.beach_access,
+                              ),
+                            ),
+                            Text('ビーチ'),
+                            ],
+                        ),
+
+                            Column(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+
+                                    border: Border.all(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(10),
+
+                                  ),
+                                  child: Icon(
+                                    Icons.more_horiz,
+                                  ),
+                                ),
+                                Text('その他'),
+                              ],
+                            )
+                          ],
+                        ),
+                       Container(
+                         padding: EdgeInsets.only(left: 20),
+                         width: double.infinity,
+                           child: Text('詳細',textAlign: TextAlign.left,
+                             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
+
+                        Container(
+                          width: 450.0,
+                          height: 180.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(20),
+                              bottomRight: Radius.circular(20),
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
+                            ),
+                            color: Colors.grey,
+                          ),
+                          padding: EdgeInsets.all(20),
+                          child: Text('オールド・トラッフォードは、イングランド・グレーター・マンチェスターのトラフォードにあるサッカースタジアム。プレミアリーグに所属するマンチェスター・ユナイテッドFCのホームスタジアムである。'
+                              '数々の名勝負・名試合がここで行われてきたことから、ボビー・チャールトンによって命名された "The Theatre of Dreams"（シアター・オブ・ドリームズ、夢の劇場）という別名を持つ。'),
+                        ),
+                         SizedBox(height: 25,),
+                         ElevatedButton(
+                             onPressed: (){
+
+                             },
+
+                           child: Text('ホテルを予約する'),
+                           style: ElevatedButton.styleFrom(
+                             shape: const StadiumBorder(),
+                         ),
+                         ),
+                      ],
+                    ),
+
+
+
+
+
+
+
+
+
+
+
 
     );
   }
